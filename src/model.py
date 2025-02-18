@@ -1,10 +1,11 @@
+import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.metrics import mean_absolute_error
 from sklearn.preprocessing import LabelEncoder
 
-# Loading Dataset
+# Loading Dataset with relative path
 # Create target object and call it y, ELEMENT THAT YOU WANT TO PREDICT
 # Create X ELEMENTS THAT YOU WANT/THINK/HOPE THAT ARE NEED IT TO PREDICT THAT ELEMENT
 # Split into validation and training data
@@ -14,7 +15,8 @@ from sklearn.preprocessing import LabelEncoder
 # Calculate mean absolute error
 # Using best value for max_leaf_nodes
 
-league_dataset_path = 'C:\\Users\\huawei\\Desktop\\Basic ML\\LeaguesDataset\\LaLiga.csv'
+current_dir = os.path.dirname(__file__)
+league_dataset_path = os.path.join(current_dir, '..', 'LeaguesDataset', 'LaLiga.csv')
 league_dataset = pd.read_csv(league_dataset_path)
 
 # Null Values being dropped
