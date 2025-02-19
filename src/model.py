@@ -15,7 +15,7 @@ from sklearn.preprocessing import LabelEncoder
 # Calculate mean absolute error
 # Using best value for max_leaf_nodes
 
-current_dir = os.path.dirname(__file__)
+current_dir = os.getcwd()
 league_dataset_path = os.path.join(current_dir, '..', 'LeaguesDataset', 'LaLiga.csv')
 league_dataset = pd.read_csv(league_dataset_path)
 
